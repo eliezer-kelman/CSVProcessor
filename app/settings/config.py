@@ -1,6 +1,4 @@
 import os
-from ensurepip import bootstrap
-
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -12,3 +10,7 @@ load_dotenv()
 bootstrap_server = os.environ['BOOTSTRAP_SERVERS']
 
 topic_mongo_writer = os.environ['MONGO_WRITER_TOPIC']
+
+num_partitions = os.environ['NUM_PARTITIONS']
+
+num_replication = os.environ['NUM_REPLICATION']

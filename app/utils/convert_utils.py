@@ -7,7 +7,7 @@ def convert_row_to_terror_event(row):
         row = row.where(pd.notnull(row), None)
         event = TerrorEvent(
             eventid=row['eventid'],
-            date={"year": row['iyear'], "month": row['imonth'], "day": row['iday']},
+            date=row['date'],
             location={
                 "country": row['country_txt'],
                 "region": row['region_txt'],
@@ -32,6 +32,7 @@ def convert_row_to_terror_event(row):
                 "perpetrators": row['nperps'] if row['nperps'] != -99 else 0,
                 "captured": row['nperpcap'] if row['nperpcap'] != -99 else 0,
             },
+            description=row['Description']
         )
         return event.model_dump()
     except Exception as e:

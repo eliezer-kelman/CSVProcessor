@@ -7,6 +7,5 @@ def send_to_kafka(data, topic):
         bootstrap_servers=bootstrap_server,
         value_serializer=lambda v: json.dumps(v).encode("utf-8")
     )
-    for record in data:
-        producer.send(topic, value=record)
+    producer.send(topic, value=data)
     producer.flush()

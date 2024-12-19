@@ -2,17 +2,6 @@ import pytest
 from app.processors.data_csv_cleaner import clean_data
 from app.readers.csv_reader import read_csv
 
-relevant_columns = [
-    'eventid', 'iyear', 'imonth', 'iday', 'country_txt',
-    'provstate', 'city', 'latitude', 'longitude', 'region_txt', 'nkill', 'nkillter',
-    'nwound', 'nwoundte', 'nperps', 'nperpcap', 'attacktype1_txt',
-    'targtype1_txt', 'gname', 'gname2', 'gname3'
-]
-
-required_columns = [
-    "eventid", "iyear", "country_txt", 'attacktype1_txt', 'targtype1_txt', 'gname'
-]
-
 
 @pytest.fixture(scope="module")
 def cleaned_data():
