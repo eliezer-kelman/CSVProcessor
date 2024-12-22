@@ -29,8 +29,8 @@ def convert_row_to_terror_event(row):
                 "primary_group": row['gname'],
                 "secondary_group": row['gname2'],
                 "tertiary_group": row['gname3'],
-                "perpetrators": row['nperps'] if row['nperps'] != -99 else 0,
-                "captured": row['nperpcap'] if row['nperpcap'] != -99 else 0,
+                "perpetrators": row['nperps'] if row['nperps'] != -99 else None,
+                "captured": row['nperpcap'] if row['nperpcap'] != -99 else None,
             },
             description=row['Description']
         )
